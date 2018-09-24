@@ -309,6 +309,7 @@ main_state_transition(const vehicle_status_s &status, const main_state_t new_mai
 
 		break;
 
+	case commander_state_s::MAIN_STATE_AUTO_AMS:
 	case commander_state_s::MAIN_STATE_AUTO_RTL:
 
 		/* need global position and home position */

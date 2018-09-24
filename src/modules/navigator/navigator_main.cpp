@@ -691,6 +691,11 @@ Navigator::run()
 			navigation_mode_new = &_follow_target;
 			break;
 
+		case vehicle_status_s::NAVIGATION_STATE_AUTO_AMS:
+			_pos_sp_triplet_published_invalid_once = false;
+			navigation_mode_new = &_ams;
+			break;
+
 		case vehicle_status_s::NAVIGATION_STATE_MANUAL:
 		case vehicle_status_s::NAVIGATION_STATE_ACRO:
 		case vehicle_status_s::NAVIGATION_STATE_ALTCTL:

@@ -26,6 +26,7 @@ uint8 RC_CHANNELS_FUNCTION_GEAR=22
 uint8 RC_CHANNELS_FUNCTION_ARMSWITCH=23
 uint8 RC_CHANNELS_FUNCTION_STAB=24
 uint8 RC_CHANNELS_FUNCTION_MAN=25
+uint8 RC_CHANNELS_FUNCTION_AMS=26
 
 uint64 timestamp_last_valid					# Timestamp of last valid RC signal
 float32[18] channels						# Scaled to -1..1 (throttle: 0..1)

@@ -105,6 +105,7 @@ void RCUpdate::update_rc_functions()
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_GEAR] = _parameters.rc_map_gear_sw - 1;
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_STAB] = _parameters.rc_map_stab_sw - 1;
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_MAN] = _parameters.rc_map_man_sw - 1;
+	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_AMS] = _parameters.rc_map_ams_sw - 1;
 
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_FLAPS] = _parameters.rc_map_flaps - 1;
 
@@ -422,6 +423,8 @@ RCUpdate::rc_poll(const ParameterHandles &parameter_handles)
 					       _parameters.rc_posctl_inv);
 			manual.return_switch = get_rc_sw2pos_position(rc_channels_s::RC_CHANNELS_FUNCTION_RETURN, _parameters.rc_return_th,
 					       _parameters.rc_return_inv);
+			manual.ams_switch = get_rc_sw2pos_position(rc_channels_s::RC_CHANNELS_FUNCTION_AMS, _parameters.rc_ams_th,
+					       _parameters.rc_ams_inv);
 			manual.loiter_switch = get_rc_sw2pos_position(rc_channels_s::RC_CHANNELS_FUNCTION_LOITER, _parameters.rc_loiter_th,
 					       _parameters.rc_loiter_inv);
 			manual.acro_switch = get_rc_sw2pos_position(rc_channels_s::RC_CHANNELS_FUNCTION_ACRO, _parameters.rc_acro_th,
